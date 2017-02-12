@@ -10,12 +10,12 @@ import csv
 
 def writeToCSV(xmldoc):
     # Path of CSV file
-    csvfile = open('C:/Users/Desktop/XMLParser/Huwei.csv', 'w')
+    csvfile = open('C:/Users/Desktop/XMLParser/LTE-eNodeB.csv', 'w')
     # Defining field headers for xml file
     fieldnames = ['IP_Root_Tag', 'IP', 'PEERIP_Root_Tag', 'PEERIP',  'LOCALIP_Root_Tag',  'LOCALIP', 'DSTIP_Root_Tag',  'DSTIP', 'NEXTHOP_IP_Root_Tag',  'NEXTHOP', 'NEXTHOPIP_IP_Root_Tag', 'NEXTHOPIP',  'SIP_Root_Tag', 'SIP', 'CIP_Root_Tag', 'CIP', 'DIP_Root_Tag', 'DIP', 'SWC_Root_Tag', 'SWC']
     writer = csv.DictWriter(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n', fieldnames=fieldnames)
     writer.writeheader()
-    xmldoc = minidom.parse('C:/Users/Desktop/XMLParser/ENODEB_FullExport.xml')
+    xmldoc = minidom.parse('C:/Users/Desktop/XMLParser/LTE-eNodeB.xml')
 # Get xml elements
     for attrib in xmldoc.getElementsByTagName("class"):
         
@@ -92,7 +92,7 @@ def writeToCSV(xmldoc):
                              
             
 # Path of XML File 
-xmldoc = minidom.parse('C:/Users/Desktop/XMLParser/ENODEB_FullExport.xml')        
+xmldoc = minidom.parse('C:/Users/Desktop/XMLParser/LTE-eNodeB.xml')        
 
 writeToCSV(xmldoc)
 
